@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 public class ActionRepository {
 
 	public void saveAction(Action action) {
-		System.out.println(String.format("[%s] was changed from [%s] to [%s] by [%s]", action.getFieldName(),
+		System.out.println(String.format("***\t[%s] was changed from [%s] to [%s] by [%s]", action.getFieldName(),
 				action.getOldValue(), action.getNewValue(), action.getModifiedBy()));
 	}
 
