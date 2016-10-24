@@ -2,13 +2,18 @@ package org.sb.aop.examples.afa.domain;
 
 import org.sb.aop.examples.afa.audit.markup.AopAudit;
 
-@AopAudit
+//@AopAudit
 public class Client {
 
+	@AopAudit
 	private Long id;
+	@AopAudit
 	private String firstName;
+	@AopAudit
 	private String lastName;
+	@AopAudit
 	private String email;
+	@AopAudit
 	private String mobileNumber;
 
 	public Long getId() {

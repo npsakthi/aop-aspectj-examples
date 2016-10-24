@@ -15,9 +15,11 @@ public aspect FieldAuditAspect {
 	@Autowired
 	private ActionRepository actionRepository;
 
-	pointcut auditField(Object t, Object value): set(* @*.AopAudit *.*) && args(value) && target(t);
+	pointcut auditField(Object t, Object value): set(@(*.AopAudit) * *.*) && args(value) && target(t);
+	
+	pointcut auditType(Object t, Object value): set(* @(*.AopAudit) *.*) && args(value) && target(t);
 
-	before(Object target, Object newValue): auditField(target, newValue) {
+	before(Object target, Object newValue): auditField(target, newValue) || auditType(target, newValue) {
 		FieldSignature sig = (FieldSignature) thisJoinPoint.getSignature();
 		Field field = sig.getField();
 		field.setAccessible(true);

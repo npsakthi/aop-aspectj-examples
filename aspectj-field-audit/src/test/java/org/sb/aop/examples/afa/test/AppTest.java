@@ -14,10 +14,17 @@ public class AppTest {
 	@Test
 	public void aopAuditTest() {
 		Client client = new Client();
+
 		client.setId(1L);
 		client.setEmail("client@somemail.org");
-		client.setLastName("Jon");
+		client.setLastName("John");
 		client.setFirstName("Snow");
+		client.setMobileNumber("+7(123)456-78-91");
+		System.out.println("---");
+		client.setId(222L);
+		client.setEmail("client222@somemail.org");
+		client.setLastName("Agent");
+		client.setFirstName("Smith");
 		client.setMobileNumber("+7(123)456-78-91");
 	}
 
